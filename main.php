@@ -35,4 +35,16 @@ while (true) {
         $command->delete($id);
     }
 
+    if (preg_match('/^modify\s+(\d+),\s*([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
+        $id = (int)$matches[1];
+        $name = trim($matches[2]);
+        $email = trim($matches[3]);
+        $phone = trim($matches[4]);
+
+        $command->modify($id, $name, $email, $phone);
+    }
+
+    if ($line === "help") {
+        $command->help();
+    }
 }

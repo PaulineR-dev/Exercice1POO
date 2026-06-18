@@ -72,4 +72,19 @@ class ContactManager
         $statement->execute(['id' => $id]);
     }
 
-   }
+    public function modify(int $id, string $name, string $email, string $phone): void
+    {
+        $stmt = $this->pdo->prepare("
+            UPDATE contact
+            SET name = :name, email = :email, phone_number = :phone
+            WHERE id = :id
+        ");
+
+        $stmt->execute([
+            'id' => $id,
+            'name' => $name,
+            'email' => $email,
+            'phone' => $phone
+        ]);
+    }
+}

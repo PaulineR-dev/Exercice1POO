@@ -14,7 +14,8 @@ class Command
         $contacts = $this->manager->findAll();
 
         foreach ($contacts as $contact) {
-            echo $contact->toString() . "\n";
+            echo $contact . "\n";
+
         }
     }
 
@@ -27,7 +28,8 @@ class Command
             return;
         }
 
-        echo $contact->toString() . "\n";
+        echo $contact . "\n";
+
     }
 
     public function create(string $name, string $email, string $phone): void
@@ -43,4 +45,20 @@ class Command
         echo "Contact supprimé (id : $id)\n";
     }
 
+    public function modify(int $id, string $name, string $email, string $phone): void
+    {
+        $this->manager->modify($id, $name, $email, $phone);
+        echo "Contact modifié (id : $id)\n";
+    }
+
+    public function help(): void
+    {
+        echo "Commandes disponibles :\n";
+        echo "help : affiche cette aide\n";
+        echo "list : liste tous les contacts\n";
+        echo "detail [id] : affiche le détail d’un contact\n";
+        echo "create [name], [email], [phone] : crée un contact\n";
+        echo "delete [id] : supprime un contact\n";
+        echo "modify [id], [name], [email], [phone] : modifie un contact\n";
+    }
 }
