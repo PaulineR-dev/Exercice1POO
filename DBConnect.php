@@ -2,7 +2,7 @@
 
 class DBConnect
 {
-    public function getPDO(): PDO
+    public static function getPDO(): PDO
     {
         return new PDO(
             "mysql:host=localhost;dbname=contacts;charset=utf8mb4",
