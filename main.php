@@ -16,4 +16,23 @@ while (true) {
     if ($line === "list") {
         $command->list();
     }
+
+    if (preg_match('/^detail (\d+)$/', $line, $matches)) {
+        $id = (int)$matches[1];
+        $command->detail($id);
+    }
+
+    if (preg_match('/^create\s+([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
+        $name = trim($matches[1]);
+        $email = trim($matches[2]);
+        $phone = trim($matches[3]);
+
+        $command->create($name, $email, $phone);
+    }
+
+    if (preg_match('/^delete (\d+)$/', $line, $matches)) {
+        $id = (int)$matches[1];
+        $command->delete($id);
+    }
+
 }
