@@ -17,12 +17,12 @@ while (true) {
         $command->list();
     }
 
-    if (preg_match('/^detail (\d+)$/', $line, $matches)) {
+    else if (preg_match('/^detail (\d+)$/', $line, $matches)) {
         $id = (int)$matches[1];
         $command->detail($id);
     }
 
-    if (preg_match('/^create\s+([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
+    else if (preg_match('/^create\s+([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
         $name = trim($matches[1]);
         $email = trim($matches[2]);
         $phone = trim($matches[3]);
@@ -30,12 +30,12 @@ while (true) {
         $command->create($name, $email, $phone);
     }
 
-    if (preg_match('/^delete (\d+)$/', $line, $matches)) {
+    else if (preg_match('/^delete (\d+)$/', $line, $matches)) {
         $id = (int)$matches[1];
         $command->delete($id);
     }
 
-    if (preg_match('/^modify\s+(\d+),\s*([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
+    else if (preg_match('/^modify\s+(\d+),\s*([^,]+),\s*([^,]+),\s*(.+)$/', $line, $matches)) {
         $id = (int)$matches[1];
         $name = trim($matches[2]);
         $email = trim($matches[3]);
@@ -44,7 +44,11 @@ while (true) {
         $command->modify($id, $name, $email, $phone);
     }
 
-    if ($line === "help") {
+    else if ($line === "help") {
         $command->help();
+    }
+
+    else {
+        echo "Commande inconnue ou mal formatée.\n";
     }
 }
