@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Connexion avec la base de données 
+ */
 class DBConnect
 {
     public static function getPDO(): PDO

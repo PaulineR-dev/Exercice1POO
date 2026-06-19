@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Contact avec ses informations principales
+ */
 class Contact
 {
     private ?int $id;
@@ -50,6 +53,7 @@ class Contact
         $this->phoneNumber = $phoneNumber;
     }
     
+    // Représentation textuelle du contact avec chaînes de caractères
     public function __toString(): string
     {
         return "{$this->id}, {$this->name}, {$this->email}, {$this->phoneNumber}";

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Classe responsable de l'exécution des commandes
+ */
 class Command
 {
     private ContactManager $manager;
@@ -26,7 +29,7 @@ class Command
             echo "Aucun contact trouvé pour l'id $id\n";
             return;
         }
-
+        
         echo $contact . "\n";
     }
 

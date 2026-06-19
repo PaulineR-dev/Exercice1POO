@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Classe responsable de toutes les opérations sur les contacts
+ * Interagit avec la base de données via PDO
+ */
 class ContactManager
 {
     private PDO $pdo;
