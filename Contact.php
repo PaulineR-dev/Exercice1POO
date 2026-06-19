@@ -49,11 +49,9 @@ class Contact
     {
         $this->phoneNumber = $phoneNumber;
     }
-
     
     public function __toString(): string
     {
         return "{$this->id}, {$this->name}, {$this->email}, {$this->phoneNumber}";
     }
-
 }

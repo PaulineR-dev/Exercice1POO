@@ -11,7 +11,7 @@ class ContactManager
 
     public function findAll(): array
     {
-        $sql = "SELECT * FROM contact";
+        $sql = "SELECT * FROM contact ORDER BY id ASC";
         $statement = $this->pdo->prepare($sql);
         $statement->execute();
 
@@ -74,13 +74,13 @@ class ContactManager
 
     public function modify(int $id, string $name, string $email, string $phone): void
     {
-        $stmt = $this->pdo->prepare("
+        $statement = $this->pdo->prepare("
             UPDATE contact
             SET name = :name, email = :email, phone_number = :phone
             WHERE id = :id
         ");
 
-        $stmt->execute([
+        $statement->execute([
             'id' => $id,
             'name' => $name,
             'email' => $email,

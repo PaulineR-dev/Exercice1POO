@@ -15,7 +15,6 @@ class Command
 
         foreach ($contacts as $contact) {
             echo $contact . "\n";
-
         }
     }
 
@@ -29,7 +28,6 @@ class Command
         }
 
         echo $contact . "\n";
-
     }
 
     public function create(string $name, string $email, string $phone): void
@@ -37,7 +35,6 @@ class Command
         $this->manager->create($name, $email, $phone);
         echo "Contact créé : $name, $email, $phone\n";
     }
-
 
     public function delete(int $id): void
     {
