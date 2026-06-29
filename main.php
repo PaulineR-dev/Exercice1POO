@@ -39,8 +39,7 @@ while (true) {
     } elseif ($line === "quit") {
         echo "Fermeture du programme.\n";
         break;
-    }
-    else {
+    } else {
         echo "Commande inconnue ou mal formatée.\n";
     }
 }
