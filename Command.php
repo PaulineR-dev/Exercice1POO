@@ -57,8 +57,9 @@ class Command
         echo "help : affiche cette aide\n";
         echo "list : liste tous les contacts\n";
         echo "detail [id] : affiche le détail d’un contact\n";
-        echo "create [name], [email], [phone] : crée un contact\n";
+        echo "create [name], [email], [phone number] : crée un contact\n";
         echo "delete [id] : supprime un contact\n";
-        echo "modify [id], [name], [email], [phone] : modifie un contact\n";
+        echo "modify [id], [name], [email], [phone number] : modifie un contact\n";
+        echo "quit : quitte le programme\n";
     }
 }

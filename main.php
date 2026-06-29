@@ -48,6 +48,11 @@ while (true) {
         $command->help();
     }
 
+    elseif ($line === "quit") {
+        echo "Fermeture du programme.\n";
+        break;
+    }
+
     else {
         echo "Commande inconnue ou mal formatée.\n";
     }
