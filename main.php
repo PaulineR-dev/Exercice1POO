@@ -10,7 +10,7 @@ $pdo = DBConnect::getPDO();
 $manager = new ContactManager($pdo);
 $command = new Command($manager);
 
-// Boucle principale
+// Boucle principale 
 while (true) {
     $line = readline("Entrez votre commande : ");
     echo "Vous avez saisi : $line\n";
